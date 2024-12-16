@@ -2,18 +2,21 @@ number_people = int(input())
 mat = []
 asum = 0
 bsum = 0
-min = 1000
+bmin = 100000
+amin = 100000
 for i in range(number_people):
     s = input().split(" ")
     a = int(s[0]) 
     b = int(s[-1])
-    if b < min:
-        min = b 
+    if b < bmin:
+        bmin = b 
+    if a < amin:
+        amin = a
     asum += a 
     bsum += b 
 
 if asum >= bsum:
-    print(asum+min)
+    print(asum+bmin)
 else:
-    print(asum+ (bsum-asum))
+    print(bsum+ amin)
     
