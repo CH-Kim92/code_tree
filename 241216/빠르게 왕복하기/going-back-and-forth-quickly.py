@@ -4,6 +4,8 @@ asum = 0
 bsum = 0
 bmin = 100000
 amin = 100000
+bmax = 0 
+aa = 0
 for i in range(number_people):
     s = input().split(" ")
     a = int(s[0]) 
@@ -12,11 +14,14 @@ for i in range(number_people):
         bmin = b 
     if a < amin:
         amin = a
+    if b > bmax:
+        bmax = b 
+        aa = a 
     asum += a 
     bsum += b 
 
 if asum >= bsum:
     print(asum+bmin)
 else:
-    print(bsum+ amin)
+    print(bsum+ a)
     
